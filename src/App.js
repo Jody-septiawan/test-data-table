@@ -22,13 +22,15 @@ function App() {
 
     console.clear()
 
-    let newData = data.proformaItem.map((item,idx)=>{
+    let newData = data.proformaItem.map((item)=>{
 
-      let jakked = findProductStock(item.product_stock, '1')
-      let tangdap = findProductStock(item.product_stock, '3')
-      let bekgal = findProductStock(item.product_stock, '5')
+      let jakked = parseInt(findProductStock(item.product_stock, '1'))
+      let tangdap = parseInt(findProductStock(item.product_stock, '3'))
+      let bekgal = parseInt(findProductStock(item.product_stock, '5'))
 
       let total = jakked + tangdap + bekgal
+
+      console.log(`${jakked} + ${tangdap} + ${bekgal} = ${total}`)
 
       let items = JSON.parse(item.items)[0]
 
